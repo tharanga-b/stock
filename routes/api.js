@@ -57,7 +57,7 @@ module.exports = function (app) {
         }
       })
       if (result.length === 2) {
-        res.json({ stockData: [{ stock: dataList[0].symbol, price: dataList[0].latestPrice, likes: likes1 }, { stock: dataList[1].symbol, price: dataList[1].latestPrice, likes: likes2 }] })
+        res.json({ stockData: [{ stock: dataList[0].symbol, price: dataList[0].latestPrice, rel_like: likes1-likes2 }, { stock: dataList[1].symbol, price: dataList[1].latestPrice, rel_like: likes1-likes2 }] })
         return false
       } else {
         res.json({ stockData: { stock: dataList[0].symbol, price: dataList[0].latestPrice, likes: likes1 } })
